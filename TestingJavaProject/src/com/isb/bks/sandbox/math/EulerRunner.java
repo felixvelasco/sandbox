@@ -19,7 +19,11 @@ public class EulerRunner {
 			    .forName("com.isb.bks.sandbox.math.problems.Euler"
 				    + number);
 		    EulerProblem problem = (EulerProblem) clazz.newInstance();
+		    long act = System.nanoTime();
 		    System.out.println(problem.execute());
+		    long next = System.nanoTime();
+		    System.out.println("Time: " + (next - act)
+			    / (1000 * 1000 * 1000));
 		} catch (InstantiationException | IllegalAccessException e) {
 		    System.out.println("Cannot find class Euler" + number
 			    + " with an empty, public constructor");
