@@ -22,6 +22,7 @@ public class PrimeNumbers {
      * @return the list of prime factors
      */
     public static List<BigInteger> primeFactors(BigInteger number) {
+	System.out.println("Conflicto");
 	BigInteger sqrt = sqrt(new BigDecimal(number), 1).toBigInteger();
 	preCalculateUpTo(sqrt);
 	BigInteger n = number;
