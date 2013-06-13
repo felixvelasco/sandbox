@@ -14,6 +14,13 @@ public class PrimeNumbers {
 
     private static List<BigInteger> primes = new ArrayList<>();
 
+    /**
+     * Returns a list of the prime factors of a given number
+     * 
+     * @param the
+     *            number to exam
+     * @return the list of prime factors
+     */
     public static List<BigInteger> primeFactors(BigInteger number) {
 	BigInteger sqrt = sqrt(new BigDecimal(number), 1).toBigInteger();
 	preCalculateUpTo(sqrt);
@@ -34,16 +41,28 @@ public class PrimeNumbers {
 	return factors;
     }
 
+    /**
+     * Returns the index-ism prime number, if it has been previously calculated
+     * 
+     * @param index
+     * @return
+     */
     public static BigInteger getPrimeNumber(int index) {
 	return primes.get(index);
     }
 
-    public static void preCalculateUpTo(BigInteger bigInteger) {
+    /**
+     * Calculates and stores every prime number lower than a specific one
+     * 
+     * @param limit
+     *            the limit of primes to calculate
+     */
+    public static void preCalculateUpTo(BigInteger limit) {
 	primes.clear();
 	primes.add(TWO);
 	primes.add(THREE);
 	BigInteger k = BigInteger.ONE;
-	while (bigInteger.compareTo(k) > 0) {
+	while (limit.compareTo(k) > 0) {
 	    k = k.add(FOUR);
 	    if (isPrime(k)) {
 		primes.add(k);
@@ -55,12 +74,18 @@ public class PrimeNumbers {
 	}
     }
 
-    public static void preCalculate(int numbers) {
+    /**
+     * Calculates and stores max prime numbers
+     * 
+     * @param max
+     *            the number of primes to calculate
+     */
+    public static void preCalculate(int max) {
 	primes.clear();
 	primes.add(TWO);
 	primes.add(THREE);
 	BigInteger k = BigInteger.ONE;
-	while (primes.size() < numbers) {
+	while (primes.size() < max) {
 	    k = k.add(FOUR);
 	    if (isPrime(k)) {
 		primes.add(k);
