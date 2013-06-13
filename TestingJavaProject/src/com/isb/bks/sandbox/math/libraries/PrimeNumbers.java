@@ -97,6 +97,13 @@ public class PrimeNumbers {
 	}
     }
 
+    /**
+     * Evaluate if a number is prime
+     * 
+     * @param number
+     *            number to evaluate
+     * @return true if the number is prime
+     */
     public static boolean isPrime(BigInteger number) {
 	BigInteger sqrt = sqrt(new BigDecimal(number), 1).toBigInteger();
 	for (int index = 0; sqrt.compareTo(primes.get(index)) >= 0; index++) {
