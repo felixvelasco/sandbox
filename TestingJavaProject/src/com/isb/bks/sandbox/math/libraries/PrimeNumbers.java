@@ -114,6 +114,15 @@ public class PrimeNumbers {
 	return true;
     }
 
+    /**
+     * Returns the square root of a given number, in the provided scale
+     * 
+     * @param in
+     *            the number to obtain the square root from
+     * @param scale
+     *            the number of decimal places to return
+     * @return the square root
+     */
     public static BigDecimal sqrt(BigDecimal in, int scale) {
 	BigDecimal sqrt = new BigDecimal(1);
 	sqrt.setScale(scale + 3, RoundingMode.FLOOR);
