@@ -126,11 +126,8 @@ public class PrimeNumbers {
 		first = false;
 	    }
 	    store.setScale(scale + 3, RoundingMode.FLOOR);
-	    sqrt = in
-		    .divide(store, scale + 3, RoundingMode.FLOOR)
-		    .add(store)
-		    .divide(BigDecimal.valueOf(2), scale + 3,
-			    RoundingMode.FLOOR);
+	    sqrt = in.divide(store, scale + 3, RoundingMode.FLOOR).add(store)
+		    .divide(BigDecimal.valueOf(2), scale + 3, RoundingMode.FLOOR);
 	} while (!store.equals(sqrt));
 	return sqrt.setScale(scale, RoundingMode.FLOOR);
     }
