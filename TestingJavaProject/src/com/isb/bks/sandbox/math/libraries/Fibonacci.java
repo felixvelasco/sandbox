@@ -13,7 +13,7 @@ public class Fibonacci {
     }
 
     /**
-     * Calculate number
+     * Precalculates fibonacci number lower than a given number
      * 
      * @param max
      *            max number
@@ -34,7 +34,8 @@ public class Fibonacci {
     }
 
     /**
-     * Fibonacci function
+     * Calculates the n-ism number of the fibonacci sequence, using the cache if
+     * it's available
      * 
      * @param n
      *            number
