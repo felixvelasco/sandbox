@@ -12,6 +12,13 @@ public class Fibonacci {
 	fibCache.add(BigInteger.ONE);
     }
 
+    /**
+     * Calculate number
+     * 
+     * @param max
+     *            max number
+     * @return list of numbers
+     */
     public static List<Integer> findUpTo(int max) {
 	List<Integer> ret = new ArrayList<>();
 
@@ -26,6 +33,13 @@ public class Fibonacci {
 	return ret;
     }
 
+    /**
+     * Fibonacci function
+     * 
+     * @param n
+     *            number
+     * @return number calculated
+     */
     public static BigInteger fib(int n) {
 	if (n >= fibCache.size()) {
 	    fibCache.add(n, fib(n - 1).add(fib(n - 2)));
